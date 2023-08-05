@@ -16,7 +16,9 @@ const App = () =>{
 
   const renderWeatherData =  (countryWeather) =>{
 
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${countryWeather}&appid=42f9134579490c7a4c2d887ff9185e06`).then(response =>{
+    const api_key = process.env.REACT_APP_API_KEY
+
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${countryWeather}&appid=${api_key}`).then(response =>{
       const temp = response.data.main.temp
       const wind = response.data.wind.speed
       const imgSrc = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
