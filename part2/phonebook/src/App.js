@@ -78,7 +78,7 @@ const App = () => {
       return
     }
     setFilterName(event.target.value)
-    const filterPersonsList = persons.filter(person => person.name.toLowerCase().indexOf(event.target.value) !== -1)
+    const filterPersonsList = persons.filter(person => person.name.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
     setFilterPersons(filterPersonsList)
   }
 
